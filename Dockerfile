@@ -4,5 +4,5 @@ RUN apt-get update -y && \
     docker-php-ext-install bcmath ctype json mbstring zip && \
     apt-get remove -y libonig-dev libzip-dev && \
     apt-get clean
-COPY --from=composer /usr/bin/composer /usr/bin/composer
+COPY --from=composer:1 /usr/bin/composer /usr/bin/composer
 RUN chmod +x /usr/bin/composer
